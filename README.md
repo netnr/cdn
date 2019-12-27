@@ -1,2 +1,2 @@
-# cdn
-CDN resources
+- jquery-easyui
+- jquery-easyui-extension
