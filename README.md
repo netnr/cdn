@@ -1,2 +1,5 @@
+- acenav
+- emoji
 - jquery-easyui
 - jquery-easyui-extension
+- netnr-datakit-extension   
