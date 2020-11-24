@@ -1,6 +1,8 @@
 - acenav
+- bmob
 - emoji
 - jquery-easyui
 - jquery-easyui-extension
 - netnr-datakit-extension
+- qrcodejs
 - text-to-image
