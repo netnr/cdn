@@ -2,4 +2,5 @@
 - emoji
 - jquery-easyui
 - jquery-easyui-extension
-- netnr-datakit-extension   
+- netnr-datakit-extension
+- text-to-image

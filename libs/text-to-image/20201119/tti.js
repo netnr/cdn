@@ -10,7 +10,9 @@ console.log($base64);
 
 var $img = document.createElement("img");
 $img.src = $base64;
-ti.asText($img, function (txt) { console.log(txt) });
+ti.asText($img, function (txt) { console.log(txt) }); //img node
+
+ti.asText("https://domain.com/image.png", function (txt) { console.log(txt) }); //img url
 */
 
 (function (window) {
@@ -150,13 +152,12 @@ ti.asText($img, function (txt) { console.log(txt) });
 		return new tti.Convert(colors);
 	};
 
-	tti.prototype.asText = function (img, callback) {
-
-		var image = new Image();
-
-		image.onload = function () {
+	tti.prototype.asText = function (imgOrSrc, callback) {
+		var img = new Image();
+		img.setAttribute("crossOrigin", "");
+		img.onload = function () {
 			var decoder = new tti.Convert();
-			var colors = decoder.fromImage(image);
+			var colors = decoder.fromImage(img);
 
 			var encoded = colors.reduce(function (acc, item) {
 				acc.push(item.r);
@@ -174,9 +175,7 @@ ti.asText($img, function (txt) { console.log(txt) });
 			var decoder = new TextDecoder();
 			callback(decoder.decode(new Uint8Array(encoded)));
 		}
-
-		image.src = img.src;
-
+		img.src = typeof imgOrSrc == "string" ? imgOrSrc : imgOrSrc.src;
 	}
 
 	window.tti = tti;
