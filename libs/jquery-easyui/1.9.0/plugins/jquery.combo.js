@@ -1,7 +1,7 @@
 /**
- * EasyUI for jQuery 1.9.0
+ * EasyUI for jQuery 1.9.14
  * 
- * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
+ * Copyright (c) 2009-2021 www.jeasyui.com. All rights reserved.
  *
  * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
  * To use it on other terms please contact us: info@jeasyui.com
@@ -22,7 +22,7 @@ function _2(_3){
 var _4=$.data(_3,"combo");
 var _5=_4.options;
 if(!_4.panel){
-_4.panel=$("<div class=\"combo-panel\"></div>").appendTo("body");
+_4.panel=$("<div class=\"combo-panel\"></div>").appendTo("html>body");
 _4.panel.panel({minWidth:_5.panelMinWidth,maxWidth:_5.panelMaxWidth,minHeight:_5.panelMinHeight,maxHeight:_5.panelMaxHeight,doSize:false,closed:true,cls:"combo-p",style:{position:"absolute",zIndex:10},onOpen:function(){
 var _6=$(this).panel("options").comboTarget;
 var _7=$.data(_6,"combo");

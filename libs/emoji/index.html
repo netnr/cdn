@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta name="keywords" content="netnr,NET牛人,emoji,表情" />
+    <meta name="description" content="netnr,NET牛人,emoji,表情" />
+
+    <title>emoji</title>
+
+    <link href="https://code.bdstatic.com/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet" async>
+    <script src="https://code.bdstatic.com/npm/jquery@3.5.0/dist/jquery.min.js"></script>
+    <script src="https://code.bdstatic.com/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .emoji-cell {
+            margin: 15px 15px 70px;
+            border-collapse: collapse;
+        }
+
+            .emoji-cell tr td {
+                float: left;
+                margin: 3px;
+                cursor: pointer;
+                min-width: 80px;
+                text-align: center;
+                border: 1px solid white;
+            }
+
+                .emoji-cell tr td img {
+                    max-height: 40px;
+                    user-select: none;
+                    margin-bottom: 10px;
+                }
+
+                .emoji-cell tr td div {
+                    margin: 10px auto;
+                }
+
+                .emoji-cell tr td:hover {
+                    border-color: #337ab7;
+                }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-light">
+        <a class="navbar-brand" href="/">
+            <img src="/favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="">
+            emoji
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link">选择分类</a>
+                </li>
+                <li class="nav-item">
+                    <select class="custom-select nrEmojiName"></select>
+                </li>
+            </ul>
+            <a href="api.json">API</a>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mt-2">
+                <input class="form-control form-control-sm nrEmojiSrc" placeholder="emoji src" />
+            </div>
+        </div>
+    </div>
+
+    <div class="nrEmojiBox"></div>
+
+    <script>
+        var emoji = {
+            box: $('div.panel-group'),
+            init: function () {
+                $.getJSON("api.json", null, function (ej) {
+
+                    var ens = [], tbs = [];
+                    $.each(ej, function () {
+                        var that = this;
+
+                        //分类
+                        ens.push('<option value="' + that.type + '">' + that.name + '（' + that.type + '）</option>');
+
+                        //表情表格
+                        tbs.push('<table class="emoji-cell d-none" data-type="' + that.type + '"><tr>');
+                        $.each(that.list, function (n) {
+                            tbs.push('<td>');
+                            tbs.push('<div>' + this + '</div>');
+                            tbs.push('<img src="favicon.ico" data-src="' + that.type + "/" + n + that.ext + '" title="' + this + '" alt="' + this + '" />');
+                            tbs.push('</td>');
+                        });
+                        tbs.push('</tr></table>');
+                    })
+                    $('.nrEmojiName').change(function () {
+                        emoji.viewEmojiForType();
+                    }).html(ens.join(''));
+                    $('.nrEmojiBox').html(tbs.join(''));
+
+                    //点击表情显示链接
+                    $('.nrEmojiBox').click(function (e) {
+                        var target = e.target || window.event.srcElement;
+                        $(this).find('td').each(function () {
+                            if (this.contains(target)) {
+                                $('.nrEmojiSrc').val($(this).find('img')[0].src);
+                                return false;
+                            }
+                        })
+                    });
+
+                    $('.nrEmojiSrc').focus(function () {
+                        this.select();
+                    });
+
+                    emoji.viewEmojiForType();
+
+                });
+
+            },
+
+            /**
+             * 根据分类显示
+             */
+            viewEmojiForType: function () {
+                var tables = $('.nrEmojiBox').children();
+                tables.addClass('d-none');
+                var tb = tables.filter('[data-type="' + $('.nrEmojiName').val() + '"]');
+                tb.removeClass('d-none');
+                if (!tb.attr('data-load')) {
+                    tb.attr('data-load', 1)
+
+                    tb.find('img').each(function () {
+                        var that = this;
+                        var img = new Image();
+                        img.onload = function () {
+                            that.src = img.src;
+                        }
+                        img.onerror = function () {
+                            that.src = "loading.gif";
+                        };
+                        img.src = $(that).attr('data-src');
+                    });
+                }
+            }
+        }
+
+        emoji.init();
+    </script>
+</body>
+</html>

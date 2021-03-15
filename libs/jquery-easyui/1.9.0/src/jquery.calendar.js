@@ -1,7 +1,7 @@
 /**
- * EasyUI for jQuery 1.9.0
+ * EasyUI for jQuery 1.9.14
  * 
- * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
+ * Copyright (c) 2009-2021 www.jeasyui.com. All rights reserved.
  *
  * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
  * To use it on other terms please contact us: info@jeasyui.com
@@ -44,7 +44,7 @@
 					'<div class="calendar-menu">' +
 						'<div class="calendar-menu-year-inner">' +
 							'<span class="calendar-nav calendar-menu-prev"></span>' +
-							'<span><input class="calendar-menu-year" type="text"></input></span>' +
+							'<span><input class="calendar-menu-year" type="text"></span>' +
 							'<span class="calendar-nav calendar-menu-next"></span>' +
 						'</div>' +
 						'<div class="calendar-menu-month-inner">' +
@@ -387,6 +387,7 @@
 		},
 		moveTo: function(jq, date){
 			return jq.each(function(){
+				var opts = $(this).calendar('options');
 				if (!date){
 					var now = new opts.Date();
 					$(this).calendar({
@@ -396,7 +397,6 @@
 					});
 					return;
 				}
-				var opts = $(this).calendar('options');
 				if (opts.validator.call(this, date)){
 					var oldValue = opts.current;
 					$(this).calendar({
