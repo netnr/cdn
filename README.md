@@ -1,9 +1,10 @@
 - acenav
+- asciinema-player
 - bmob
 - emoji
 - jquery-easyui
 - jquery-easyui-extension
 - kityminder
 - netnr-datakit-extension
-- qrcodejs
+- netnr-nav
 - text-to-image
