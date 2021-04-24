@@ -5,21 +5,21 @@
     z-index: 10;
 }
 
-    .netnrnav a {
-        color: #333;
-        text-decoration: none;
-    }
+.netnrnav a {
+    color: #333;
+    text-decoration: none;
+}
 
-        .netnrnav a:active,
-        .netnrnav a:hover {
-            color: #333;
-            text-decoration: none;
-        }
+.netnrnav a:active,
+.netnrnav a:hover {
+    color: #333;
+    text-decoration: none;
+}
 
-        .netnrnav a:focus {
-            outline: none;
-            text-decoration: none;
-        }
+.netnrnav a:focus {
+    outline: none;
+    text-decoration: none;
+}
 
 @media (max-width: 768px) {
     .netnrnav {
@@ -33,11 +33,10 @@
     margin-bottom: 15px;
 }
 
-    .netnrnav .netnrnav-wrapper > ul.float-right,
-    .netnrnav .netnrnav-wrapper-fluid > ul.float-right {
-        float: none !important;
-    }
-
+.netnrnav .netnrnav-wrapper > ul.float-right,
+.netnrnav .netnrnav-wrapper-fluid > ul.float-right {
+    float: none !important;
+}
 
 .netnrnav ul li a {
     width: 100%;
@@ -46,10 +45,10 @@
     display: inline-block;
 }
 
-    .netnrnav ul li a:hover {
-        color: orange;
-        background-color: #f5f5f5;
-    }
+.netnrnav ul li a:hover {
+    color: orange;
+    background-color: #f5f5f5;
+}
 
 .netnrnav ul {
     cursor: pointer;
@@ -57,41 +56,41 @@
     padding-left: 15px;
 }
 
-    .netnrnav ul > li {
-        line-height: 45px;
-        position: relative;
-    }
+.netnrnav ul > li {
+    line-height: 45px;
+    position: relative;
+}
 
-        .netnrnav ul > li.divider {
-            height: 1px;
-            margin: 9px 0;
-            overflow: hidden;
-            background-color: #e5e5e5;
-        }
+.netnrnav ul > li.divider {
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
 
-        .netnrnav ul > li > a {
-            padding: 0 15px;
-        }
+.netnrnav ul > li > a {
+    padding: 0 15px;
+}
 
-        .netnrnav ul > li span.indicator {
-            width: 15px;
-            float: right;
-            margin-top: 10px;
-            text-align: right;
-        }
+.netnrnav ul > li span.indicator {
+    width: 15px;
+    float: right;
+    margin-top: 10px;
+    text-align: right;
+}
 
 .netnrnav li > ul {
     display: none;
 }
 
-    .netnrnav li > ul > li {
-        float: none;
-        position: relative;
-    }
+.netnrnav li > ul > li {
+    float: none;
+    position: relative;
+}
 
-        .netnrnav li > ul > li:hover {
-            background-color: #FFFFFF;
-        }
+.netnrnav li > ul > li:hover {
+    background-color: #ffffff;
+}
 
 .netnrnav li.active > ul {
     display: block;
@@ -130,8 +129,8 @@
     -webkit-transform: translateX(-100%);
     -ms-transform: translateX(-100%);
     transform: translateX(-100%);
-    -webkit-transition: -webkit-transform 0.4s,box-shadow 0.4s;
-    transition: transform 0.4s,box-shadow 0.4s;
+    -webkit-transition: -webkit-transform 0.4s, box-shadow 0.4s;
+    transition: transform 0.4s, box-shadow 0.4s;
     max-width: 260px;
 }
 
@@ -159,14 +158,14 @@
     background-color: rgba(0, 0, 0, 0.8);
     visibility: hidden;
     opacity: 0;
-    -webkit-transition: opacity 0.4s,visibility 0.4s;
-    transition: opacity 0.4s,visibility 0.4s;
+    -webkit-transition: opacity 0.4s, visibility 0.4s;
+    transition: opacity 0.4s, visibility 0.4s;
 }
 
-    .netnrnav.netnrnav-mask.active {
-        visibility: visible;
-        opacity: 0.6;
-    }
+.netnrnav.netnrnav-mask.active {
+    visibility: visible;
+    opacity: 0.6;
+}
 
 .netnrnav.horizontal {
     width: 100%;
@@ -174,46 +173,22 @@
     z-index: 999;
     min-height: 48px;
     border-top: 3px solid orange;
-    box-shadow: 0 0 8px 0 rgba(0,0,0,0.1), 0 1px rgba(0,0,0,0.1);
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1), 0 1px rgba(0, 0, 0, 0.1);
 }
 
-    .netnrnav.horizontal ul {
-        padding: 0 !important;
-        background-color: white;
-        margin-bottom: 0;
-    }
-
-        .netnrnav.horizontal ul > li {
-            line-height: 45px;
-        }
-
-    .netnrnav.horizontal .netnrnav-wrapper {
-        margin: 0 auto;
-    }
-
-@media (min-width: 768px) {
-    .netnrnav.horizontal .netnrnav-wrapper {
-        width: 730px;
-    }
+.netnrnav.horizontal ul {
+    padding: 0 !important;
+    background-color: white;
+    margin-bottom: 0;
 }
 
-@media (min-width: 992px) {
-    .netnrnav.horizontal .netnrnav-wrapper {
-        width: 970px;
-    }
+.netnrnav.horizontal ul > li {
+    line-height: 45px;
 }
 
-@media (min-width: 1200px) {
-    .netnrnav.horizontal .netnrnav-wrapper {
-        width: 1140px;
-    }
-}
-
-@media (min-width: 1600px) {
-    .netnrnav.horizontal .netnrnav-wrapper {
-        width: auto;
-        max-width: 99%;
-    }
+.netnrnav.horizontal .netnrnav-wrapper {
+    margin: 0 auto;
+    max-width: 99%;
 }
 
 .netnrnav.horizontal .netnrnav-wrapper > ul,
@@ -224,56 +199,62 @@
     background-color: transparent;
 }
 
-    .netnrnav.horizontal .netnrnav-wrapper > ul > li,
-    .netnrnav.horizontal .netnrnav-wrapper-fluid > ul > li {
-        position: relative;
-        float: left;
-        cursor: pointer;
-        border-bottom: none;
-        min-width: initial;
-    }
+.netnrnav.horizontal .netnrnav-wrapper > ul > li,
+.netnrnav.horizontal .netnrnav-wrapper-fluid > ul > li {
+    position: relative;
+    float: left;
+    cursor: pointer;
+    border-bottom: none;
+    min-width: initial;
+}
 
-        .netnrnav.horizontal .netnrnav-wrapper > ul > li > a,
-        .netnrnav.horizontal .netnrnav-wrapper-fluid > ul > li > a {
-            padding: 0 15px;
-        }
+.netnrnav.horizontal .netnrnav-wrapper > ul > li > a,
+.netnrnav.horizontal .netnrnav-wrapper-fluid > ul > li > a {
+    padding: 0 15px;
+}
 
-        .netnrnav.horizontal .netnrnav-wrapper > ul > li > ul,
-        .netnrnav.horizontal .netnrnav-wrapper-fluid > ul > li > ul {
-            float: none;
-            position: absolute;
-            left: 0;
-            border: 1px solid #e5e5e5;
-        }
+.netnrnav.horizontal .netnrnav-wrapper > ul > li > ul,
+.netnrnav.horizontal .netnrnav-wrapper-fluid > ul > li > ul {
+    float: none;
+    position: absolute;
+    left: 0;
+    border: 1px solid #e5e5e5;
+}
 
-            .netnrnav.horizontal .netnrnav-wrapper > ul > li > ul > li,
-            .netnrnav.horizontal .netnrnav-wrapper-fluid > ul > li > ul > li {
-                float: none;
-            }
+.netnrnav.horizontal .netnrnav-wrapper > ul > li > ul > li,
+.netnrnav.horizontal .netnrnav-wrapper-fluid > ul > li > ul > li {
+    float: none;
+}
 
-                .netnrnav.horizontal .netnrnav-wrapper > ul > li > ul > li ul,
-                .netnrnav.horizontal .netnrnav-wrapper-fluid > ul > li > ul > li ul {
-                    position: absolute;
-                    left: 100%;
-                    top: 0;
-                    border: 1px solid #e5e5e5;
-                }
+.netnrnav.horizontal .netnrnav-wrapper > ul > li > ul > li ul,
+.netnrnav.horizontal .netnrnav-wrapper-fluid > ul > li > ul > li ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    border: 1px solid #e5e5e5;
+}
 
-    .netnrnav.horizontal .netnrnav-wrapper > ul.float-right,
-    .netnrnav.horizontal .netnrnav-wrapper-fluid > ul.float-right {
-        float: right !important;
-    }
+.netnrnav.horizontal .netnrnav-wrapper > ul.float-right,
+.netnrnav.horizontal .netnrnav-wrapper-fluid > ul.float-right {
+    float: right !important;
+}
 
-        .netnrnav.horizontal .netnrnav-wrapper > ul.float-right > li > ul,
-        .netnrnav.horizontal .netnrnav-wrapper-fluid > ul.float-right > li > ul {
-            right: 0;
-            left: auto;
-        }
+.netnrnav.horizontal .netnrnav-wrapper > ul.float-right > li > ul,
+.netnrnav.horizontal .netnrnav-wrapper-fluid > ul.float-right > li > ul {
+    right: 0;
+    left: auto;
+}
 
-            .netnrnav.horizontal .netnrnav-wrapper > ul.float-right > li > ul > li ul,
-            .netnrnav.horizontal .netnrnav-wrapper-fluid > ul.float-right > li > ul > li ul {
-                left: -101%;
-            }
+.netnrnav.horizontal .netnrnav-wrapper > ul.float-right > li > ul > li ul,
+.netnrnav.horizontal
+    .netnrnav-wrapper-fluid
+    > ul.float-right
+    > li
+    > ul
+    > li
+    ul {
+    left: -101%;
+}
 
 .netnrnav.horizontal .show-in-horizontal {
     display: block !important;
