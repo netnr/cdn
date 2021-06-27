@@ -2,6 +2,7 @@
 - asciinema-player
 - bmob
 - emoji
+- identicon
 - device-detector
 - jquery-easyui
 - jquery-easyui-extension
